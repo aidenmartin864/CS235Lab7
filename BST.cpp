@@ -87,16 +87,6 @@ bool BST::insert(int val, Node *&T){ //pass by reference, important!
               T->value = newVal;
           }
 
-          //PREVIOUS 2CHILD CODE IF IT GETS MESSED UP
-//          else if(T->left != NULL && T->right != NULL){
-//              Node *findSmallest = T->right;
-//              while(findSmallest->left != NULL)
-//                  findSmallest = findSmallest->left;
-//              int newVal = findSmallest->value;
-//              remove(newVal);
-//              T->value = newVal;
-//          }
-
           //if 1 left child...
           else if(T->left != NULL){
               Node *newNode = T->left;
@@ -129,7 +119,6 @@ void BST::clear(){
 }
 
 void BST::recursiveClear(Node *curr){
-    cout << "inside clear function" << endl;
     if(curr != NULL){
         recursiveClear(curr->left);
         recursiveClear(curr->right);
